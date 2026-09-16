@@ -65,6 +65,7 @@ body{
   justify-content: space-between;
   width: 100%;
   background-color: var(--very-dark-desaturated-blue);
+  border-radius: 5px;
   
 }
 .input_plus button {
@@ -85,6 +86,8 @@ body{
   
   padding: 0;
   margin-bottom: 0;
+  margin-top: 0;
+  border-radius: 5px;
 
 }
 .input_plus .button-add{
@@ -92,6 +95,18 @@ body{
   background-color: var(--bright-blue);
   padding: 5px;
   margin-right: 5px;
+}
+.bottom_item2{
+  
+  display: block;
+  
+}
+.border{
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 0;
+  margin-top: 20px;
+  
 }
 
 .list-item{
@@ -103,6 +118,7 @@ body{
   list-style: none;
   border-bottom: 1px solid var(--light-grayish-blue);
   padding: 10px;
+  
   
   
 }
@@ -131,20 +147,32 @@ img{
   color: var(--light-grayish-blue);
   
 
-  
 }
 .bottom_item{
   padding: 5px;
+  opacity: 1;
+  
+  
+
 }
 .bottom_item_self{
   padding: 5px;
+}
+.bottom_item_self2{
+  display: none;
 }
 .bottom_item_self:hover{
   color: var(--bright-blue);
   cursor: pointer;
 }
-input{
+.bottom_item_self2:hover{
+   color: var(--bright-blue);
+  cursor: pointer;
+}
+.input{
   color: var(--very-light-gray);
+  outline: none;
+  padding: 15px;
 }
 @media (max-width:768px) {
   .top::before{
@@ -158,4 +186,21 @@ background-size: cover;
     opacity: 1;
     
   }
+  .bottom_item2{
+    background: var(--very-dark-desaturated-blue);
+  color: var(--light-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  }
+  .bottom_item{
+    display: none;
+  }
+  .bottom_item_self2{
+  display: block;
+}
 }

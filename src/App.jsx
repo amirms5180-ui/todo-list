@@ -97,10 +97,12 @@ const itemLeft = todoList.filter(todo => todo.cheakCircle === false).length
     <div className='input_plus'>
 
       
-    <input id='todoInput' value={todo} type="text"placeholder='creat new todo list' onKeyDown={handlekeydown} onChange={addTodo}  style={{padding:"15px",}} />
+    <input className='input' id='todoInput' value={todo} type="text"placeholder='creat new todo list' onKeyDown={handlekeydown} onChange={addTodo}   />
     <button className='button-add'  onClick={()=>handleplus()}>Add</button>
  
     </div>
+    <div className='border'>
+
     <ul>
 
       {showing().map((todo,index)=>(
@@ -124,12 +126,18 @@ const itemLeft = todoList.filter(todo => todo.cheakCircle === false).length
         <buttom className="bottom_item_self" onClick={()=>setShow("complete")}>Complete</buttom>
       </div>
       <div onClick={()=>settodolist([])} style={{cursor:"pointer"}}>
-      <p Name="bottom_item_self">clear Completed</p>
+      <p classNameName="bottom_item_self">clear Completed</p>
+      </div>
       </div>
       
 
 
     </div>
+      <div className='bottom_item2'>
+        <buttom className="bottom_item_self2" onClick={()=>setShow("all")}>All</buttom>
+        <buttom className="bottom_item_self2" onClick={()=>setShow("active")}>Activ</buttom>
+        <buttom className="bottom_item_self2" onClick={()=>setShow("complete")}>Complete</buttom>
+      </div>
       </div >
       </div>
        </div>
