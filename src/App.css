@@ -1,0 +1,161 @@
+:root {
+  --bright-blue: hsl(220, 98%, 61%);
+  --check-background: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+
+  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-grayish-blue: hsl(236, 33%, 92%);
+  --light-grayish-blue: hsl(234, 39%, 85%);
+  --dark-grayish-blue: hsl(234, 11%, 52%);
+  --very-dark-grayish-blue: hsl(233, 14%, 35%);
+  --very-dark-blue: hsl(235, 21%, 11%);
+  --very-dark-desaturated-blue: hsl(235, 24%, 19%);
+}
+body{
+  font-size: 18px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 300;
+  background: var(--very-dark-blue);
+}
+.top {
+  position: relative;
+  overflow: hidden; 
+  min-height: 300px;
+}
+
+.top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px; /* ارتفاع ثابت که می‌خوای بک‌گراند بگیره */
+  background: url('bg-desktop-dark.jpg') no-repeat top center;
+  background-size: 100% auto; /* یا cover، بسته به نتیجه‌ای که می‌خوای */
+  z-index: -1;
+}
+.all{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  
+  
+}
+
+
+.list{
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 540px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  
+  
+}
+.input_plus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--very-dark-desaturated-blue);
+  
+}
+.input_plus button {
+  border: none;
+  background: transparent;
+  color: var(--very-light-grayish-blue);
+  font-size: 25px;
+  
+}
+
+.input_plus input {
+  flex: 1;
+  border: none;
+  background: transparent;
+}
+
+.list ul {
+  
+  padding: 0;
+  margin-bottom: 0;
+
+}
+.input_plus .button-add{
+  border-radius: 20px;
+  background-color: var(--bright-blue);
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.list-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--very-dark-desaturated-blue);
+  color:var(--very-light-gray);
+  list-style: none;
+  border-bottom: 1px solid var(--light-grayish-blue);
+  padding: 10px;
+  
+  
+}
+.img_zarbdar{
+  opacity: 0;
+  padding-right: 0;
+}
+
+.list-div{
+  display: flex;
+  align-items: center;
+  
+}
+img{
+  padding-right:5px;
+}
+.check {
+  margin-right: 20px;
+}
+.bottom{
+  background-color: var(--very-dark-desaturated-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  color: var(--light-grayish-blue);
+  
+
+  
+}
+.bottom_item{
+  padding: 5px;
+}
+.bottom_item_self{
+  padding: 5px;
+}
+.bottom_item_self:hover{
+  color: var(--bright-blue);
+  cursor: pointer;
+}
+input{
+  color: var(--very-light-gray);
+}
+@media (max-width:768px) {
+  .top::before{
+background:url(bg-mobile-dark.jpg) ;
+background-size: cover;
+  }
+  .list{
+    max-width: 400px;
+  }
+  .img_zarbdar{
+    opacity: 1;
+    
+  }
+}
