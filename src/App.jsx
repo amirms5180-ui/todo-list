@@ -105,7 +105,9 @@ const itemLeft = todoList.filter(todo => todo.cheakCircle === false).length
 
     <ul>
 
-      {showing().map((todo,index)=>(
+      {showing().map((todo,)=>{
+        const index=todoList.indexOf(todo);
+        return(
         
         <li className='list-item' style={{textDecoration:todo.cheakCircle?"line-through":"none",color:" hsl(236, 33%, 92%)"}}> 
         <div className='list-div'><img src={todo.cheakCircle ? cheak : circle}  onClick={()=>handleCheack(index)} width="30" height="30"/>
@@ -114,18 +116,24 @@ const itemLeft = todoList.filter(todo => todo.cheakCircle === false).length
          </div>
          <img src={zarbdarr} alt="" width="25" height="25" className='img_zarbdar'onClick={()=>handleDelete(index)} />
          </li>
+        )
         
-      ))}
+       })}
       
     </ul>
     <div className='bottom'>
       <p>{itemLeft}items left</p>
       <div className='bottom_item'>
         <buttom className="bottom_item_self" onClick={()=>setShow("all")}>All</buttom>
-        <buttom className="bottom_item_self" onClick={()=>setShow("active")}>Activ</buttom>
+        <buttom className="bottom_item_self" onClick={()=>setShow("active")}>Active</buttom>
         <buttom className="bottom_item_self" onClick={()=>setShow("complete")}>Complete</buttom>
       </div>
-      <div onClick={()=>settodolist([])} style={{cursor:"pointer"}}>
+      <div onClick={()=>settodolist(todoList.filter(list=>{
+        if(list.cheakCircle===false){
+          return list
+
+        }
+      }))} style={{cursor:"pointer"}}>
       <p classNameName="bottom_item_self">clear Completed</p>
       </div>
       </div>

@@ -45,6 +45,10 @@ body{
   
   
 }
+h1{
+  color: var(--light-grayish-blue);
+  margin-bottom: 5px;
+}
 
 
 .list{
